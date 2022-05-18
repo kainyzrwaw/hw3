@@ -20,17 +20,6 @@ class PlacesController < ApplicationController
         redirect_to "/places"
       end
     
-      def edit
-        @place = Place.find_by({ "id" => params["id"] })
-      end
-    
-      def update
-        @place = Company.find_by({ "id" => params["id"] })
-        @place["name"] = params["place"]["name"]
-        @place.save
-        redirect_to "/places"
-      end
-    
       def destroy
         @place = Place.find_by({ "id" => params["id"] })
         @place.destroy
